@@ -1,70 +1,41 @@
-# 🧑‍💻 K-Nearest Neighbors (KNN) Workshop
+👥 Team Members
 
-## 📘 Workshop Summary
-This repository contains the materials and student solutions for the **K-Nearest Neighbors (KNN) Workshop**.  
-The workshop introduces students to data analysis, machine learning design patterns, and active learning practices through the implementation of the KNN algorithm.
+Ce Chen (9007166)
 
-Students will explore multiple types of datasets (CSV files, APIs, relational databases), implement KNN classifiers, and design their code using the **Machine Learning Pipeline Pattern**. The workshop emphasizes collaboration through **peer programming** and reflection on algorithm performance.
+Haibo Yuan (9010929)
 
----
+Zhuoran Zhang (9048508)
 
-## 🎯 Learning Objectives
-By completing this workshop, you will be able to:
-1. Understand the intuition behind the K-Nearest Neighbors algorithm.  
-2. Acquire, clean, and preprocess data from different sources.  
-3. Apply KNN for classification and evaluate its performance.  
-4. Architect code using the **Machine Learning Pipeline Pattern**.  
-5. Collaborate with peers through active learning and peer programming.  
-6. Reflect on the strengths, limitations, and real-world applications of KNN.  
+📌 Project Summary
 
----
+This project implements a K-Nearest Neighbors (KNN) classifier using the Pipeline Pattern, following the workshop requirement to:
 
-## 🤖 About the KNN Algorithm
-The **K-Nearest Neighbors algorithm** is a simple, non-parametric machine learning method used for classification and regression.  
-- A new data point is classified based on the **majority label of its *k* closest neighbors** in the training set.  
-- The choice of *k* and the method of measuring distance (e.g., Euclidean, Manhattan) heavily influence performance.  
-- KNN is **instance-based** (lazy learning): it stores the training data and makes predictions only at query time.  
+Chain data loading, preprocessing, training, and evaluation in a clear pipeline.
 
----
+The dataset used is Breast Cancer Wisconsin (Diagnostic) from the UCI Machine Learning Repository.
 
-## 🏗️ Implementation with ML Architecture and Design Patterns
-This workshop emphasizes implementing KNN using the **Machine Learning Pipeline Pattern**:
-- **Data Acquisition** (from CSV, API, or relational database)  
-- **Data Cleaning & Preprocessing** (scaling, encoding, handling missing values)  
-- **Feature Engineering**  
-- **Model Training** (KNN classifier)  
-- **Evaluation** (accuracy, confusion matrix, other metrics)  
-- **Reflection & Peer Comparison**  
+Data is acquired from a Neon PostgreSQL database, with a fallback to a local CSV file for reproducibility.
 
-By structuring code into **modular components**, students will learn how to build reproducible and extensible ML workflows, aligning with professional MLOps practices.
+🔄 Pipeline Structure
 
----
+The implementation includes four modular steps:
 
-## 📂 High-Level View of the Workshop
-The workshop is split across two sessions (two hours total), with homework in between:
+load_data() – Load data from Neon (fallback to CSV)
 
-- **Session 1**  
-  - Introduction to KNN (theory and Iris dataset demo)  
-  - Hands-on: load and preprocess a dataset from a CSV, API, or relational DB  
+preprocess_data() – Clean, split, and scale data
 
-- **Homework**  
-  - Finalize preprocessing and prepare dataset for KNN  
+train_model() – Train KNN classifier
 
-- **Session 2**  
-  - Implement KNN using the Pipeline Pattern  
-  - Train, evaluate, and visualize results  
-  - Reflect on algorithm performance  
-  - Compare results with peers and discuss strengths/weaknesses of KNN  
+evaluate_model() – Evaluate performance (accuracy, classification report, confusion matrix)
 
----
+All steps are executed in a structured main pipeline block.
 
-## 📝 Deliverables
-- `KNN_Workshop_Solution.ipynb`: Your notebook implementation with code and explanations.  
-- `README.md`: This file, including your name, student ID, and a brief summary of your work.  
-- A PDF file with your name, student ID, and the URL to your remote repository.  
+📊 Model Performance
 
----
+Accuracy: ~94.7%
 
-## ✍️ Instructor Information
-- **Name:** *David Espinosa*  
-- **Release:** *October 2025*  
+Strong precision and recall for both classes
+
+🛠 Tools Used
+
+Python, pandas, scikit-learn, SQLAlchemy, Neon PostgreSQL
