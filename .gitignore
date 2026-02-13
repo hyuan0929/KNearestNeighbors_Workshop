@@ -15,10 +15,6 @@ venv/
 .venv/
 env/
 
-# Environment variables 
-
-.env
-
 # VS Code settings
 
 .vscode/
